@@ -27,15 +27,169 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: const Color(0xFFC7D9FE),
-        appBar: AppBar(
-          title: IconButton(
-              icon: const Icon(Icons.list,
-              color: Color(0xFF20005E)),
-              onPressed: () {},
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFFF7FAFF)),
+        drawer: Drawer(
+          backgroundColor: const Color(0xFFC7D9FE),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 50,
               ),
-            ),
+              Row(
+                children: [
+                  const SizedBox(
+                    width: 30,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: const Color(0xFFF7FAFF),
+                      image: const DecorationImage(
+                        image: AssetImage("assets/images/profile.jpeg"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Text("Rayane Beddou", style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Poppins"
+                  ),
+                  ),
+                  const SizedBox(
+                    width: 25,
+                  ),
+                  Icon(
+                    Icons.verified,
+                    color: Color.fromARGB(255, 20, 65, 231),
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              SwitchListTile(
+                secondary: Icon(Icons.wb_sunny_outlined,
+                color: const Color(0xFF20005E)),
+                title: const Text("Dark Mode",
+                style: TextStyle(
+                  color: Color(0xFF20005E),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Poppins"
+                ),
+                ),
+                value: false,
+                onChanged: (value) {},
+                activeColor: const Color(0xFF20005E),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              ListTile(
+                leading: const Icon(Icons.person,
+                color: Color(0xFF20005E)),
+                title: const Text("Account",
+                style: TextStyle(
+                  color: Color(0xFF20005E),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Poppins"
+                ),
+                ),
+                onTap: (){},
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              ListTile(
+                leading: const Icon(Icons.shopping_basket,
+                color: Color(0xFF20005E)),
+                title: const Text("Orders",
+                style: TextStyle(
+                  color: Color(0xFF20005E),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Poppins"
+                ),
+                ),
+                onTap: (){},
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              ListTile(
+                leading: const Icon(Icons.favorite,
+                color: Color(0xFF20005E)),
+                title: const Text("Favorites",
+                style: TextStyle(
+                  color: Color(0xFF20005E),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Poppins"
+                ),
+                ),
+                onTap: (){},
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              ListTile(
+                leading: const Icon(Icons.settings,
+                color: Color(0xFF20005E)),
+                title: const Text("Settings",
+                style: TextStyle(
+                  color: Color(0xFF20005E),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Poppins"
+                ),
+                ),
+                onTap: (){},
+              ),
+              Expanded(child: Stack(
+                children: [
+                  Positioned(
+                    bottom: 40,
+                    left: 80,
+                    child: GestureDetector(
+                      onTap: (){},
+                      child: Container(
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        height: 50,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: const Color(0xFFCF0826),
+                        ),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [Icon(Icons.logout, color: Colors.white,),
+                          Text("Log Out",
+                          style: TextStyle(
+                            color: Color(0xFFF7FAFF),
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Poppins"
+                          ),
+                          ),
+                          ]
+                        ),
+                      ),
+                    ),
+                    )
+                ],
+              ))
+            ],
+          ),
+        )
+        ,
+        appBar: AppBar(
           backgroundColor: const Color(0xFFC7D9FE),
           actions: [
             IconButton(
